@@ -31,7 +31,7 @@ const Nav = () => {
   }, []); 
 
   return (
-    <div className="navbar bg-gradient-to-r from-black via-purple-600 to-pink-500 px-10 ">
+    <div className="navbar bg-gradient-to-r from-black via-[#795f5b] to-gray-500 px-10 ">
       <div className="flex-1">
       {animationData ? (
         <div className="animation-container">

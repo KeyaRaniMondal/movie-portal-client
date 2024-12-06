@@ -1,9 +1,11 @@
+import Banner from "../components/banner";
 import Nav from "../components/nav.";
 
 const Home=()=>{
     return(
-        <div>
+        <div className="w-screen">
             <Nav></Nav>
+            <Banner></Banner>
         </div>
     )
 }
