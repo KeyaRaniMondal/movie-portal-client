@@ -1,0 +1,182 @@
+[
+    {
+        "Movie Poster": "https://example.com/poster1.jpg",
+        "Movie Title": "The Silent Runner",
+        "Genre": ["Drama", "Thriller"],
+        "Duration": 122,
+        "Release Year": 2022,
+        "Rating": 8.1,
+        "Summary": "A man races against time to save his family while uncovering a corporate conspiracy."
+    },
+    {
+        "Movie Poster": "https://example.com/poster2.jpg",
+        "Movie Title": "Galactic Odyssey",
+        "Genre": ["Science Fiction", "Adventure"],
+        "Duration": 145,
+        "Release Year": 2021,
+        "Rating": 7.8,
+        "Summary": "A crew of astronauts faces unexpected challenges on a mission to explore distant galaxies."
+    },
+    {
+        "Movie Poster": "https://example.com/poster3.jpg",
+        "Movie Title": "Love and the Lighthouse",
+        "Genre": ["Romance", "Drama"],
+        "Duration": 103,
+        "Release Year": 2020,
+        "Rating": 7.2,
+        "Summary": "A writer finds inspiration and love while restoring a historic lighthouse."
+    },
+    {
+        "Movie Poster": "https://example.com/poster4.jpg",
+        "Movie Title": "The Crimson Shadow",
+        "Genre": ["Action", "Thriller"],
+        "Duration": 134,
+        "Release Year": 2023,
+        "Rating": 8.5,
+        "Summary": "A retired assassin is forced back into the game when his family is threatened."
+    },
+    {
+        "Movie Poster": "https://example.com/poster5.jpg",
+        "Movie Title": "Echoes of Eternity",
+        "Genre": ["Fantasy", "Adventure"],
+        "Duration": 150,
+        "Release Year": 2022,
+        "Rating": 9.0,
+        "Summary": "A young warrior must unite warring clans to stop an ancient evil."
+    },
+    {
+        "Movie Poster": "https://example.com/poster6.jpg",
+        "Movie Title": "Cyber Revolt",
+        "Genre": ["Action", "Science Fiction"],
+        "Duration": 119,
+        "Release Year": 2023,
+        "Rating": 7.6,
+        "Summary": "In a dystopian future, a group of hackers fights against a corrupt AI overlord."
+    },
+    {
+        "Movie Poster": "https://example.com/poster7.jpg",
+        "Movie Title": "The Painter's Secret",
+        "Genre": ["Mystery", "Drama"],
+        "Duration": 97,
+        "Release Year": 2020,
+        "Rating": 6.8,
+        "Summary": "An art historian unravels the mystery behind a painter's most controversial masterpiece."
+    },
+    {
+        "Movie Poster": "https://example.com/poster8.jpg",
+        "Movie Title": "The Frozen Trail",
+        "Genre": ["Adventure", "Drama"],
+        "Duration": 113,
+        "Release Year": 2021,
+        "Rating": 7.4,
+        "Summary": "Two friends embark on a dangerous trek across a frozen wilderness to find safety."
+    },
+    {
+        "Movie Poster": "https://example.com/poster9.jpg",
+        "Movie Title": "Spirits of the Forest",
+        "Genre": ["Fantasy", "Animation"],
+        "Duration": 88,
+        "Release Year": 2022,
+        "Rating": 8.2,
+        "Summary": "A young girl befriends magical creatures to save her home from destruction."
+    },
+    {
+        "Movie Poster": "https://example.com/poster10.jpg",
+        "Movie Title": "The Final Game",
+        "Genre": ["Sports", "Drama"],
+        "Duration": 126,
+        "Release Year": 2019,
+        "Rating": 7.5,
+        "Summary": "A coach tries to redeem himself by leading an underdog team to victory."
+    },
+    {
+        "Movie Poster": "https://example.com/poster11.jpg",
+        "Movie Title": "Shadows in the Mist",
+        "Genre": ["Horror", "Thriller"],
+        "Duration": 98,
+        "Release Year": 2021,
+        "Rating": 6.9,
+        "Summary": "A small town is plagued by mysterious disappearances and supernatural events."
+    },
+    {
+        "Movie Poster": "https://example.com/poster12.jpg",
+        "Movie Title": "Time Weavers",
+        "Genre": ["Science Fiction", "Adventure"],
+        "Duration": 142,
+        "Release Year": 2023,
+        "Rating": 8.0,
+        "Summary": "A group of scientists discovers a way to travel through time, with unintended consequences."
+    },
+    {
+        "Movie Poster": "https://example.com/poster13.jpg",
+        "Movie Title": "Secrets of the Deep",
+        "Genre": ["Adventure", "Documentary"],
+        "Duration": 92,
+        "Release Year": 2020,
+        "Rating": 7.7,
+        "Summary": "A team of marine biologists explores uncharted waters and uncovers startling discoveries."
+    },
+    {
+        "Movie Poster": "https://example.com/poster14.jpg",
+        "Movie Title": "The Unseen Enemy",
+        "Genre": ["Thriller", "Mystery"],
+        "Duration": 105,
+        "Release Year": 2022,
+        "Rating": 7.3,
+        "Summary": "A journalist investigates a dangerous conspiracy that puts her life at risk."
+    },
+    {
+        "Movie Poster": "https://example.com/poster15.jpg",
+        "Movie Title": "Dancing with Shadows",
+        "Genre": ["Romance", "Drama"],
+        "Duration": 109,
+        "Release Year": 2021,
+        "Rating": 7.1,
+        "Summary": "A struggling dancer finds her passion reignited by an unlikely mentor."
+    },
+    {
+        "Movie Poster": "https://example.com/poster16.jpg",
+        "Movie Title": "The Forgotten Kingdom",
+        "Genre": ["Fantasy", "Adventure"],
+        "Duration": 147,
+        "Release Year": 2022,
+        "Rating": 8.4,
+        "Summary": "A prince must reclaim his lost kingdom from a tyrannical ruler."
+    },
+    {
+        "Movie Poster": "https://example.com/poster17.jpg",
+        "Movie Title": "Code of Silence",
+        "Genre": ["Action", "Drama"],
+        "Duration": 115,
+        "Release Year": 2023,
+        "Rating": 7.9,
+        "Summary": "A detective takes on a powerful cartel while grappling with his own dark past."
+    },
+    {
+        "Movie Poster": "https://example.com/poster18.jpg",
+        "Movie Title": "Beneath the Stars",
+        "Genre": ["Romance", "Drama"],
+        "Duration": 112,
+        "Release Year": 2021,
+        "Rating": 7.6,
+        "Summary": "Two strangers form a deep connection during a chance encounter at a meteor shower."
+    },
+    {
+        "Movie Poster": "https://example.com/poster19.jpg",
+        "Movie Title": "Winds of Change",
+        "Genre": ["Drama", "History"],
+        "Duration": 130,
+        "Release Year": 2020,
+        "Rating": 8.1,
+        "Summary": "A revolutionary leader fights for freedom and justice in a divided nation."
+    },
+    {
+        "Movie Poster": "https://example.com/poster20.jpg",
+        "Movie Title": "Rise of the Guardians",
+        "Genre": ["Fantasy", "Action"],
+        "Duration": 140,
+        "Release Year": 2023,
+        "Rating": 8.6,
+        "Summary": "A group of legendary heroes bands together to protect the world from a looming threat."
+    }
+]
