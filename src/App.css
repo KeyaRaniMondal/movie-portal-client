@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.rating {
+  display: inline;
+
+}
+
+.star {
+  margin-right: 5px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
