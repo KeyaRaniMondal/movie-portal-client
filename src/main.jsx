@@ -6,12 +6,34 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './pages/Home';
+import AddMovie from './pages/addMovie';
+import MainLayout from './mainLayout';
+import MyFavourite from './pages/myFavourites';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home></Home>
-  },
+    path:'/',
+    element:<MainLayout></MainLayout>,
+    children:[
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: "/addMovie",
+        element: <AddMovie></AddMovie>
+      },
+      {
+        path: "/favourite",
+        element: <MyFavourite></MyFavourite>
+      },
+      {
+        path: "/features",
+        element: <MyFavourite></MyFavourite>
+      },
+    ]
+  }
+
 ]);
 
 createRoot(document.getElementById('root')).render(

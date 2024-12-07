@@ -8,6 +8,9 @@ const Nav = () => {
     <>
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/allMovies'>All Movies</NavLink>
+      <NavLink to='/features'>Features</NavLink>
+      <NavLink to='/addMovie'>Add Movies</NavLink>
+      <NavLink to='/favourite'>My Favourites</NavLink>
       <NavLink to='/login'>Login</NavLink>
       <NavLink to='/register'>Register</NavLink>
 
