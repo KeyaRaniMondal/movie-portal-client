@@ -12,10 +12,14 @@ const MovieCard = () => {
         movie()
     }, [])
     return (
-        <div className="grid grid-cols-4 gap-3 ">
-            {movies.map((movie) => (
-                <div className="bg-black h-64 w-48">
-                    <img src={movies.MoviePoster} alt="movie poster" />
+        <div className="grid grid-cols-4 gap-3 text-white mx-20 -mt-10">
+            {movies.map((movie,id) => (
+                <div className="h-80" key={id} style={{
+                    backgroundImage:`url(${movie.MoviePoster})`,
+                    backgroundRepeat:'no-repeat',
+                    backgroundSize:'cover'
+                }}>
+                    
                     <h1>{movie.MovieTitle}</h1>
                     <ul>
                         {

@@ -1,6 +1,6 @@
 [
     {
-        "MoviePoster": "https://example.com/poster1.jpg",
+        "MoviePoster": "https://i.ibb.co.com/6Y0XLnN/silentrunner.jpg",
         "MovieTitle": "The Silent Runner",
         "Genre": ["Drama", "Thriller"],
         "Duration": 122,
@@ -9,7 +9,7 @@
         "Summary": "A man races against time to save his family while uncovering a corporate conspiracy."
     },
     {
-        "MoviePoster": "https://example.com/poster2.jpg",
+        "MoviePoster": "https://i.ibb.co.com/CMYVFrG/galastic.jpg",
         "MovieTitle": "Galactic Odyssey",
         "Genre": ["Science Fiction", "Adventure"],
         "Duration": 145,
@@ -18,16 +18,7 @@
         "Summary": "A crew of astronauts faces unexpected challenges on a mission to explore distant galaxies."
     },
     {
-        "MoviePoster": "https://example.com/poster3.jpg",
-        "MovieTitle": "Love and the Lighthouse",
-        "Genre": ["Romance", "Drama"],
-        "Duration": 103,
-        "ReleaseYear": 2020,
-        "Rating": 7.2,
-        "Summary": "A writer finds inspiration and love while restoring a historic lighthouse."
-    },
-    {
-        "MoviePoster": "https://example.com/poster4.jpg",
+        "MoviePoster": "https://i.ibb.co.com/K02K3cx/crimson.jpg",
         "MovieTitle": "The Crimson Shadow",
         "Genre": ["Action", "Thriller"],
         "Duration": 134,
@@ -36,7 +27,7 @@
         "Summary": "A retired assassin is forced back into the game when his family is threatened."
     },
     {
-        "MoviePoster": "https://example.com/poster5.jpg",
+        "MoviePoster": "https://i.ibb.co.com/HKhqKbF/echoes.jpg",
         "MovieTitle": "Echoes of Eternity",
         "Genre": ["Fantasy", "Adventure"],
         "Duration": 150,
@@ -45,7 +36,7 @@
         "Summary": "A young warrior must unite warring clans to stop an ancient evil."
     },
     {
-        "MoviePoster": "https://example.com/poster6.jpg",
+        "MoviePoster": "https://i.ibb.co.com/Qkj3p19/revolt.jpg",
         "MovieTitle": "Cyber Revolt",
         "Genre": ["Action", "Science Fiction"],
         "Duration": 119,
@@ -54,7 +45,7 @@
         "Summary": "In a dystopian future, a group of hackers fights against a corrupt AI overlord."
     },
     {
-        "MoviePoster": "https://example.com/poster7.jpg",
+        "MoviePoster": "https://i.ibb.co.com/X7cRWXB/painter.jpg",
         "MovieTitle": "The Painter's Secret",
         "Genre": ["Mystery", "Drama"],
         "Duration": 97,
@@ -63,7 +54,7 @@
         "Summary": "An art historian unravels the mystery behind a painter's most controversial masterpiece."
     },
     {
-        "MoviePoster": "https://example.com/poster8.jpg",
+        "MoviePoster": "https://i.ibb.co.com/z6HzmrP/frozen.jpg",
         "MovieTitle": "The Frozen Trail",
         "Genre": ["Adventure", "Drama"],
         "Duration": 113,
@@ -72,7 +63,7 @@
         "Summary": "Two friends embark on a dangerous trek across a frozen wilderness to find safety."
     },
     {
-        "MoviePoster": "https://example.com/poster9.jpg",
+        "MoviePoster": "https://i.ibb.co.com/R4spsv8/forest.jpg",
         "MovieTitle": "Spirits of the Forest",
         "Genre": ["Fantasy", "Animation"],
         "Duration": 88,
@@ -81,7 +72,7 @@
         "Summary": "A young girl befriends magical creatures to save her home from destruction."
     },
     {
-        "MoviePoster": "https://example.com/poster10.jpg",
+        "MoviePoster": "https://i.ibb.co.com/fSMJp7h/game.jpg",
         "MovieTitle": "The Final Game",
         "Genre": ["Sports", "Drama"],
         "Duration": 126,
@@ -90,7 +81,7 @@
         "Summary": "A coach tries to redeem himself by leading an underdog team to victory."
     },
     {
-        "MoviePoster": "https://example.com/poster11.jpg",
+        "MoviePoster": "https://i.ibb.co.com/Zdtwqdp/shadow.jpg",
         "MovieTitle": "Shadows in the Mist",
         "Genre": ["Horror", "Thriller"],
         "Duration": 98,
@@ -98,17 +89,9 @@
         "Rating": 6.9,
         "Summary": "A small town is plagued by mysterious disappearances and supernatural events."
     },
+    
     {
-        "MoviePoster": "https://example.com/poster12.jpg",
-        "MovieTitle": "Time Weavers",
-        "Genre": ["Science Fiction", "Adventure"],
-        "Duration": 142,
-        "ReleaseYear": 2023,
-        "Rating": 8.0,
-        "Summary": "A group of scientists discovers a way to travel through time, with unintended consequences."
-    },
-    {
-        "MoviePoster": "https://example.com/poster13.jpg",
+        "MoviePoster": "https://i.ibb.co.com/HT079Wf/deep.jpg",
         "MovieTitle": "Secrets of the Deep",
         "Genre": ["Adventure", "Documentary"],
         "Duration": 92,
@@ -117,7 +100,7 @@
         "Summary": "A team of marine biologists explores uncharted waters and uncovers startling discoveries."
     },
     {
-        "MoviePoster": "https://example.com/poster14.jpg",
+        "MoviePoster": "https://i.ibb.co.com/PCmQ6F4/enemy.jpg",
         "MovieTitle": "The Unseen Enemy",
         "Genre": ["Thriller", "Mystery"],
         "Duration": 105,
@@ -126,7 +109,7 @@
         "Summary": "A journalist investigates a dangerous conspiracy that puts her life at risk."
     },
     {
-        "MoviePoster": "https://example.com/poster15.jpg",
+        "MoviePoster": "https://i.ibb.co.com/xJkYHQx/dance.jpg",
         "MovieTitle": "Dancing with Shadows",
         "Genre": ["Romance", "Drama"],
         "Duration": 109,
@@ -134,17 +117,9 @@
         "Rating": 7.1,
         "Summary": "A struggling dancer finds her passion reignited by an unlikely mentor."
     },
+
     {
-        "MoviePoster": "https://example.com/poster16.jpg",
-        "MovieTitle": "The Forgotten Kingdom",
-        "Genre": ["Fantasy", "Adventure"],
-        "Duration": 147,
-        "ReleaseYear": 2022,
-        "Rating": 8.4,
-        "Summary": "A prince must reclaim his lost kingdom from a tyrannical ruler."
-    },
-    {
-        "MoviePoster": "https://example.com/poster17.jpg",
+        "MoviePoster": "https://i.ibb.co.com/ydmVKXt/code.jpg",
         "MovieTitle": "Code of Silence",
         "Genre": ["Action", "Drama"],
         "Duration": 115,
@@ -152,26 +127,9 @@
         "Rating": 7.9,
         "Summary": "A detective takes on a powerful cartel while grappling with his own dark past."
     },
+
     {
-        "MoviePoster": "https://example.com/poster18.jpg",
-        "MovieTitle": "Beneath the Stars",
-        "Genre": ["Romance", "Drama"],
-        "Duration": 112,
-        "ReleaseYear": 2021,
-        "Rating": 7.6,
-        "Summary": "Two strangers form a deep connection during a chance encounter at a meteor shower."
-    },
-    {
-        "MoviePoster": "https://example.com/poster19.jpg",
-        "MovieTitle": "Winds of Change",
-        "Genre": ["Drama", "History"],
-        "Duration": 130,
-        "ReleaseYear": 2020,
-        "Rating": 8.1,
-        "Summary": "A revolutionary leader fights for freedom and justice in a divided nation."
-    },
-    {
-        "MoviePoster": "https://example.com/poster20.jpg",
+        "MoviePoster": "https://i.ibb.co.com/7b1n258/raise.jpg",
         "MovieTitle": "Rise of the Guardians",
         "Genre": ["Fantasy", "Action"],
         "Duration": 140,
