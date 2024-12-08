@@ -93,7 +93,7 @@ const AddMovie = () => {
                 Summary: <br />
                 <textarea className="textarea textarea-warning" placeholder="Bio" name="Bio"></textarea>
             </div>
-            <button type="submit" className="btn bg-[#d45920] my-5 text-white">Add Movie</button>
+            <button type="submit" className="btn btn1 my-5 text-white">Add Movie</button>
             </form>
             
             </div>
