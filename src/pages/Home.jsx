@@ -1,11 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Banner from "../components/banner";
-import Nav from "../components/nav.";
+import { useEffect, useState } from "react";
+import MovieCard from "../components/movieCard";
+
 
 const Home=()=>{
+
     return(
         <div className="w-screen">
             <Banner></Banner>
+            <MovieCard></MovieCard>
         </div>
     )
 }
