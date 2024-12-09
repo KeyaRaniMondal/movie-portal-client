@@ -7,9 +7,10 @@ import MovieCard from "../components/movieCard";
 const Home=()=>{
 
     return(
-        <div className="w-screen">
+        <div className="w-screen bg-[#b8b2b2]">
             <Banner></Banner>
             <MovieCard></MovieCard>
+            <button className="btn btn1">See All Movies</button>
         </div>
     )
 }

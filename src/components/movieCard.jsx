@@ -34,7 +34,6 @@ const MovieCard = () => {
                     <button className="btn btn1">See Details</button>
                 </div>
             ))}
-            <button className="btn btn1">See All Movies</button>
         </div>
     )
 }

@@ -11,12 +11,13 @@ import MainLayout from './mainLayout';
 import MyFavourite from './pages/myFavourites';
 import Register from './pages/register';
 import Login from './pages/login';
+import AuthProvider from './providers/authProviders';
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<MainLayout></MainLayout>,
-    children:[
+    path: '/',
+    element: <MainLayout></MainLayout>,
+    children: [
       {
         path: "/",
         element: <Home></Home>
@@ -48,6 +49,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
