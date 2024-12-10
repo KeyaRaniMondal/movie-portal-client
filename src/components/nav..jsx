@@ -1,19 +1,30 @@
 import { NavLink } from "react-router-dom"
 import Lottie from "lottie-react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../providers/authProviders";
 
 
 const Nav = () => {
+
+  const {user,logOut,photoURL}=useContext(AuthContext)
   const links = (
     <>
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/allMovies'>All Movies</NavLink>
+
+      {user?(
+      <>
       <NavLink to='/features'>Features</NavLink>
       <NavLink to='/addMovie'>Add Movies</NavLink>
       <NavLink to='/favourite'>My Favourites</NavLink>
-      <NavLink to='/login'>Login</NavLink>
-      <NavLink to='/register'>Register</NavLink>
-
+      </>
+      ):(
+        <>
+              <NavLink to='/login'>Login</NavLink>
+              <NavLink to='/register'>Register</NavLink>
+        </>
+      )}
+      
     </>
   )
 
@@ -46,7 +57,7 @@ const Nav = () => {
         <a className="btn btn-ghost text-xl text-[#b4acda] -ml-5">Movie-Mania</a>
       </div>
       <div className="flex gap-10">
-        <div className="space-x-5 mr-64 text-white font-bold text-md">
+        <div className="space-x-5 mr-40 text-white font-bold text-md">
           {links}
         </div>
         <div className="form-control">
@@ -57,9 +68,10 @@ const Nav = () => {
             <div className="w-10 rounded-full">
               <img
                 alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                src={photoURL} />
             </div>
           </div>
+          <h1>{}</h1>
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
@@ -70,7 +82,7 @@ const Nav = () => {
               </a>
             </li>
             <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
+            <li onClick={logOut}><a>Logout</a></li>
           </ul>
         </div>
       </div>

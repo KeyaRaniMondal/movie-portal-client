@@ -5,9 +5,9 @@ const AllMovies = () => {
   const movies = useLoaderData(); 
 
   return (
-    <div className="w-max h-screen mt-10 mx-32">
+    <div className="w-max pb-4 mt-10 mx-32">
 <h1 className="text-4xl font-bold text-center pb-14">All Featured Movies</h1>
-<div className="grid grid-cols-3 gap-3 text-white mx-20 " >
+<div className="grid grid-cols-3 gap-10 text-white mx-20 " >
 
       {movies.map((movie) => (
         <div

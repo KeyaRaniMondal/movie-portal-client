@@ -1,20 +1,19 @@
-
 import Banner from "../components/banner";
-import MovieCard from "../components/movieCard";
-import { useLoaderData } from "react-router-dom";
-import AllMovies from "./allMovies";
+import { NavLink, useLoaderData } from "react-router-dom";
+import Features from "./features";
 
-const Home=()=>{
+const Home = () => {
+  const movies = useLoaderData();
 
-    const movies=useLoaderData()
-    return(
-        <div className="w-screen bg-[#b8b2b2]">
-            <Banner></Banner>
-            <MovieCard></MovieCard>
-            <button className="btn btn1">See All Movies</button>
-{/* <AllMovies movies={movies} /> */}
+  return (
+    <div className="w-full bg-[#b8b2b2] flex flex-col items-center pb-10">
+      <Banner />
+      <Features movies={movies} />
+      <NavLink to={'/allMovies'}>
+        <button className="btn btn1 w-40 mt-6">See All Movies</button>
+      </NavLink>
+    </div>
+  );
+};
 
-        </div>
-    )
-}
 export default Home;

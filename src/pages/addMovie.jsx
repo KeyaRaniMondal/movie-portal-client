@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Rating } from "react-simple-star-rating";
 import addMovie from '../assets/addMv.jpg'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddMovie = () => {
 
@@ -38,7 +40,8 @@ const AddMovie = () => {
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    alert('successfully added')
+                    
+                    toast('successfully added')
                 }
             })
     }
@@ -106,6 +109,7 @@ const AddMovie = () => {
                         <textarea className="textarea textarea-warning" placeholder="Bio" name="Bio"></textarea>
                     </div>
                     <button type="submit" className="btn btn1 my-5 text-white">Add Movie</button>
+                    <ToastContainer position="top-right"/>
                 </form>
 
             </div>
