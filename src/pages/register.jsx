@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from '../providers/authProviders'
 import register from '../assets/register.jpg'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate=useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -35,6 +36,8 @@ const Register = () => {
         })
         .then(res=>res.json())
         .then(data=>console.log(data))
+
+        navigate("/")
       })
 
       .catch((error) => {
