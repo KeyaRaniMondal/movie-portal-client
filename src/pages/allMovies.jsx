@@ -1,49 +1,44 @@
-// import { Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const AllMovies = ({ movies }) => {
-//     const {
-//         moviePoster,
-//         movieTitle,
-//         types,
-//         rating,
-//         Bio,
-//     } = movies
+const AllMovies = () => {
+  const movies = useLoaderData(); 
+
   return (
-//     <div className="grid grid-cols-4 gap-3 text-white mx-20 -mt-10">
-        <div>
-           {/* //</div>className="h-80 flex flex-col justify-between p-4"
-           key={id}
-           style={{
-            backgroundImage: `url(${moviePoster})`,
+    <div className="w-max h-screen mt-10 mx-32">
+<h1 className="text-4xl font-bold text-center pb-14">All Featured Movies</h1>
+<div className="grid grid-cols-3 gap-3 text-white mx-20 " >
+
+      {movies.map((movie) => (
+        <div
+          key={movie.id}
+          className="h-80 flex flex-col justify-between p-4"
+          style={{
+            backgroundImage: `url(${movie.moviePoster})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
           <div>
-            <h1 className="text-xl font-bold">{movieTitle}</h1>
-            <ul className="mt-2">
-              {Genre.map((genre, index) => (
-                <li key={index} className="text-sm">
-                  {genre}
-                </li>
-              ))}
-            </ul>
+            <h1 className="text-xl font-bold">{movie.movieTitle}</h1>
+            <p className="text-sm">{movie.types}</p>
+            <p className="text-sm">Rating: {movie.rating}/10</p>
           </div>
 
           <div>
-            <p className="text-sm">Duration: {Duration} mins</p>
-            <p className="text-sm">Release Year: {ReleaseYear}</p>
-            <p className="text-sm">Rating: {rating}/10</p>
-
-            {/* <Link to={`/movie/${id}`}>
-              <button className="btn btn1 mt-2">See Details</button>
-            </Link> */}
+            <p className="text-sm">{movie.Bio}</p>
           </div>
-
-
-//     </div>
+          <Link to={`/movie/${movie.id}`}>
+              <button className="btn btn1 mt-2">See Details</button>
+            </Link>
+        </div>
+      ))}
+    </div>
+</div>
+    
   );
 };
 
 export default AllMovies;
+

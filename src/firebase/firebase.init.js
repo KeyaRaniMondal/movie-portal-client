@@ -7,12 +7,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey:import.meta.env.API_KEY, 
-  authDomain:import.meta.env.AUTH_DOMAIN,
-  projectId:import.meta.env.PROJECT_ID,
-  storageBucket:import.meta.env.STORAGE_BUCKET,
-  messagingSenderId:import.meta.env.MESSAGE_SENDER,
-  appId: import.meta.env.APP_ID,
+  apiKey: "AIzaSyCvTnv5VvIpmkIEMmCPJ6Ow-wk_9hqPD7o",
+  authDomain:"movie-4dfed.firebaseapp.com",
+  projectId:"movie-4dfed",
+  storageBucket:"movie-4dfed.firebasestorage.app",
+  messagingSenderId:"1072245117163",
+  appId: "1:1072245117163:web:3ee37f8bddcd54cef06eae"
 };
 
 // Initialize Firebase

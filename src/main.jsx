@@ -1,61 +1,59 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './pages/Home';
-import AddMovie from './pages/addMovie';
-import MainLayout from './mainLayout';
-import MyFavourite from './pages/myFavourites';
-import Register from './pages/register';
-import Login from './pages/login';
-import AuthProvider from './providers/authProviders';
-import AllMovies from './pages/allMovies';
+import Home from "./pages/Home";
+import AddMovie from "./pages/addMovie";
+import MainLayout from "./mainLayout";
+import MyFavourite from "./pages/myFavourites";
+import Register from "./pages/register";
+import Login from "./pages/login";
+import AuthProvider from "./providers/authProviders";
+import AllMovies from "./pages/allMovies";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <MainLayout></MainLayout>,
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch("http://localhost:5000/movies"), 
       },
       {
         path: "/addMovie",
-        element: <AddMovie></AddMovie>
+        element: <AddMovie></AddMovie>,
       },
       {
         path: "/allMovies",
-        element: <AllMovies></AllMovies>
+        element: <AllMovies></AllMovies>, 
+        loader: () => fetch("http://localhost:5000/movies"),
       },
       {
         path: "/favourite",
-        element: <MyFavourite></MyFavourite>
-      },
-      {
-        path: "/features",
-        element: <MyFavourite></MyFavourite>
+        element: <MyFavourite></MyFavourite>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
-    ]
-  }
-
+    ],
+  },
 ]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+);
+
