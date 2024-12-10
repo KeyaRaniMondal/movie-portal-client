@@ -2,6 +2,27 @@ import { Link, NavLink } from 'react-router-dom'
 import login from '../assets/login.jpg'
 import '../index.css'
 const Login=()=>{
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    setLoading(true);
+    userLogin(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate(location?.state?.from?.pathname || "/");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+        setError({ ...error, login: "Invalid email or password." });
+      })
+      .finally(() => setLoading(false));
+  };
+
+
     return(
             <div style={
                 {
@@ -15,7 +36,7 @@ const Login=()=>{
     <p className="mt-4 text-black">Login for getting unlimited collection of movies...</p>
         </div>
         <div className="card bg-[#684747] w-full max-w-sm shrink-0 shadow-2xl">
-          <form className="card-body">    
+          <form onSubmit={handleSubmit} className="card-body">    
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-white">Email</span>

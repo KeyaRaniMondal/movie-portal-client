@@ -13,15 +13,30 @@ const Register = () => {
     const password = e.target.password.value;
     const photoURL = e.target.photoURL.value;
 
+    const newUser={name,email,photoURL}
+    console.log(newUser)
+
     if (password.length < 6) {
       alert("Password must be at least 6 characters long.");
       return;
     }
 
     createUser(email, password, name, photoURL)
-      .then(() => {
+      .then((result) => {
         alert("User registered successfully!");
+        console.log(result.user)
+
+        fetch('http://localhost:5000/users',{
+          method:'POST',
+          headers:{
+            'content-type':'application/json'
+          },
+          body:JSON.stringify(newUser)
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
       })
+
       .catch((error) => {
         alert(error.message);
       });

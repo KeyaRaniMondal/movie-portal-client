@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const MovieCard = () => {
     const [movies, setMovies] = useState([])
@@ -31,7 +32,10 @@ const MovieCard = () => {
                     <p>{movie.Duration}</p>
                     <p>{movie.ReleaseYear}</p>
                     <p>{movie.Rating}</p>
+                    
+                    <Link to={`/movie/${movie.id}`}>
                     <button className="btn btn1">See Details</button>
+                    </Link>
                 </div>
             ))}
         </div>
