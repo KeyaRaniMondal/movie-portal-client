@@ -1,50 +1,93 @@
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { AuthContext } from '../providers/authProviders'
 import register from '../assets/register.jpg'
 import { NavLink, useNavigate } from "react-router-dom";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
+import { toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
+  const provider = new GoogleAuthProvider();
+  const {setUser, updateProfile } = useContext(AuthContext);
   const { createUser } = useContext(AuthContext);
   const navigate=useNavigate()
 
-  const handleRegister = (e) => {
+
+  const [error, setError] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  // Google Sign-In Handler
+  const handleGoogleSignIn = () => {
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        setError({ ...error, google: "Google sign-in failed. Please try again." });
+      });
+  };
+
+
+  //email & password
+  const handleRegister = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photoURL = e.target.photoURL.value;
-
-    const newUser={name,email,photoURL}
-    console.log(newUser)
-
+  
     if (password.length < 6) {
-      alert("Password must be at least 6 characters long.");
+      toast.error("Password must be at least 6 characters long.");
       return;
     }
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must have at least 1 uppercase letter.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must have at least 1 lowercase letter.");
+      return;
+    }
+  
+    try {
 
-    createUser(email, password, name, photoURL)
-      .then((result) => {
-        alert("User registered successfully!");
-        console.log(result.user)
-
-        fetch('http://localhost:5000/users',{
-          method:'POST',
-          headers:{
-            'content-type':'application/json'
-          },
-          body:JSON.stringify(newUser)
-        })
-        .then(res=>res.json())
-        .then(data=>console.log(data))
-
-        navigate("/")
-      })
-
-      .catch((error) => {
-        alert(error.message);
+      const result = await createUser(email, password, name, photoURL);
+      const firebaseUser = result.user;
+  
+      const newUser = {
+        name,
+        email,
+        photoURL: firebaseUser.photoURL || "",
+        firebaseUID: firebaseUser.uid, 
+      };
+  
+      const response = await fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
       });
+  
+      const mongoResult = await response.json();
+  
+      if (response.ok) {
+        toast.success("User registered successfully!");
+        console.log("MongoDB User:", mongoResult);
+        navigate("/");
+      } else {
+        toast.error("Failed to save user to database.");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error(error.message);
+    }
   };
-
+  
   return (
     <div
       style={{
@@ -111,13 +154,24 @@ const Register = () => {
             <div className="form-control mt-6">
               <button className="btn btn1">Register</button>
             </div>
-            <p className="text-white">
+
+          </form>
+          <ToastContainer />
+        <div className="divider -mt-5">OR</div>
+
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn bg-white border border-gray-300 text-black flex items-center justify-center mx-auto w-72 -mt-5"
+        >
+          <FcGoogle className="mr-2" /> Sign in with Google
+        </button>
+        {error.google && <p className="text-red-500 text-sm mt-2">{error.google}</p>}
+        <p className="text-white pb-5 text-center">
               Already have an account?{" "}
               <NavLink to={"/login"} className="text-[#c5942a]">
                 Login
               </NavLink>
             </p>
-          </form>
         </div>
       </div>
     </div>
