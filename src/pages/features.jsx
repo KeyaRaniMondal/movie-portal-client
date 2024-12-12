@@ -28,7 +28,7 @@ const Features = () => {
           <div>
             <p className="text-sm">{movie.Bio}</p>
           </div>
-          <Link to={`/movie/${movie.id}`}>
+          <Link to={`/movie/${movie._id}`}>
               <button className="btn btn1 mt-2">See Details</button>
             </Link>
         </div>

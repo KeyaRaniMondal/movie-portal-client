@@ -19,8 +19,30 @@ const MovieDetails = () => {
     );
   }
 
-  const { moviePoster, movieTitle, types, rating, Bio } = movie;
-  console.log(movie)
+  const { _id, moviePoster, movieTitle, types, rating, Bio } = movie;
+
+
+  const handleDelete = () => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this movie?');
+    if (!confirmDelete) return;
+
+    fetch(`http://localhost:5000/movies/${_id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          alert('Movie deleted successfully!');
+          navigate('/allMovies'); 
+        } else {
+          alert('Failed to delete the movie. Please try again.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error deleting movie:', error);
+        alert('An error occurred while deleting the movie.');
+      });
+  };
 
   return (
     <div className="movie-details w-4/5 mx-auto my-10 ml-80">
@@ -36,24 +58,26 @@ const MovieDetails = () => {
         <div className="flex flex-col gap-4">
           <p className="text-md text-gray-700">Genres: {types}</p>
           <p className="text-lg">Rating: {rating}/5</p>
-          <p className="text-md text-black">Description: <br /> {Bio}</p>
+          <p className="text-md text-black">
+            Description: <br /> {Bio}
+          </p>
           <button
-              className="btn px-4 py-2 bg-[#cce94e] text-black rounded-full"
-            >
-              Add to Favorites
-            </button>
+            className="btn px-4 py-2 bg-[#cce94e] text-black rounded-full"
+          >
+            Add to Favorites
+          </button>
           <div className="flex gap-4">
-          <button
+            <button
               className="btn px-4 py-2 bg-[#9de45b] text-black rounded-full"
             >
-              update movie
+              Update Movie
             </button>
             <button
               className="btn btn-danger px-4 py-2 bg-[#ad1717] text-white rounded-full"
+              onClick={handleDelete} 
             >
               Delete Movie
             </button>
-
           </div>
         </div>
       </div>
@@ -62,6 +86,7 @@ const MovieDetails = () => {
 };
 
 export default MovieDetails;
+
 
 
 
