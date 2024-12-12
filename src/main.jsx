@@ -13,6 +13,9 @@ import Register from "./pages/register";
 import Login from "./pages/login";
 import AuthProvider from "./providers/authProviders";
 import AllMovies from "./pages/allMovies";
+import PrivateRoute from "./privateRoute";
+import MovieDetails from "./components/movieDetail";
+import Error from "./pages/error";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +37,17 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/movies"),
       },
       {
+        path: "/movie/:id",
+        element: (
+          <PrivateRoute>
+            <MovieDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/movies/${params.id}`)
+      },
+
+      {
         path: "/favourite",
         element: <MyFavourite></MyFavourite>,
       },
@@ -47,6 +61,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'*',
+    element:<Error></Error>
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
