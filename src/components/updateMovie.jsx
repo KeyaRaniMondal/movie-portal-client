@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const UpdateMovie = () => {
   const movie = useLoaderData();
-  const [rating, setRating] = useState(movie.rating || 0); 
+  const [rating, setRating] = useState(movie.rating || 0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,14 +26,32 @@ const UpdateMovie = () => {
     const moviePoster = form.moviePoster.value;
     const movieTitle = form.movieTitle.value;
     const types = form.Types.value;
-    const Bio = form.Bio.value;
+    const summary = form.Bio.value; // Renamed for consistency with "Summary"
+    
+    // Validation
+    if (!moviePoster.startsWith("http")) {
+      toast.error("Movie Poster must be a valid URL.");
+      return;
+    }
+    if (!movieTitle || movieTitle.length < 2) {
+      toast.error("Movie Title must be at least 2 characters long.");
+      return;
+    }
+    if (rating === 0) {
+      toast.error("Please provide a rating for the movie.");
+      return;
+    }
+    if (!summary || summary.length < 10) {
+      toast.error("Summary must be at least 10 characters long.");
+      return;
+    }
 
     const updatedMovie = {
       moviePoster,
       movieTitle,
       types,
       rating,
-      Bio,
+      summary,
     };
 
     fetch(`https://movie-portal-server-rouge.vercel.app/movies/${movie._id}`, {
@@ -46,7 +64,7 @@ const UpdateMovie = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          toast("Movie updated successfully!");
+          toast.success("Movie updated successfully!");
           navigate("/allMovies");
         } else {
           toast.error("Failed to update movie!");

@@ -1,8 +1,12 @@
-# React + Vite
+# Project Name: Movie-Menia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- live link client: https://movie-4dfed.web.app
+- live link server: https://movie-portal-server-rouge.vercel.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features :
+- Add Movie : Movie can be added here
+- Update Movie
+- Delete Movie
+- All Movies : Can view all Movies
+- Details of Movies

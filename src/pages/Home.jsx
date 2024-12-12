@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Banner from "../components/banner";
 import { NavLink, useLoaderData } from "react-router-dom";
 import Features from "./features";
+import actor from '../assets/actor.jpg'
 
 const Home = () => {
   const movies = useLoaderData();
@@ -39,9 +40,9 @@ const Home = () => {
       <NavLink to={"/allMovies"}>
         <button className="btn btn1 w-40 mt-6">See All Movies</button>
       </NavLink>
+      <img src={actor} alt="" className="mt-10"/>
     </div>
   );
 };
 
 export default Home;
-
