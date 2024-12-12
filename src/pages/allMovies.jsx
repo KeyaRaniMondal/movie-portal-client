@@ -18,7 +18,7 @@ const AllMovies = () => {
         <input
           type="text"
           placeholder="Search movies by title..."
-          className="w-1/3 px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+          className="w-1/3 px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300 "
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
