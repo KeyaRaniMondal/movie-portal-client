@@ -15,7 +15,7 @@ const Nav = () => {
         <>
           <NavLink to="/features">Features</NavLink>
           <NavLink to="/addMovie">Add Movies</NavLink>
-          <NavLink to="/favourite">My Favourites</NavLink>
+          <NavLink to="/favourites">My Favourites</NavLink>
        
         </>
       ) : (

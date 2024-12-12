@@ -36,7 +36,7 @@ const UpdateMovie = () => {
       Bio,
     };
 
-    fetch(`http://localhost:5000/movies/${movie._id}`, {
+    fetch(`https://movie-portal-server-rouge.vercel.app/movies/${movie._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
