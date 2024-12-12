@@ -2,7 +2,7 @@ import React from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const MovieDetails = () => {
-  const movie = useLoaderData(); 
+  const movie = useLoaderData();
   const navigate = useNavigate();
 
   if (!movie) {
@@ -33,7 +33,7 @@ const MovieDetails = () => {
       .then((data) => {
         if (data.deletedCount > 0) {
           alert('Movie deleted successfully!');
-          navigate('/allMovies'); 
+          navigate('/allMovies');
         } else {
           alert('Failed to delete the movie. Please try again.');
         }
@@ -68,13 +68,16 @@ const MovieDetails = () => {
           </button>
           <div className="flex gap-4">
             <button
-              className="btn px-4 py-2 bg-[#9de45b] text-black rounded-full"
+              className="btn px-4 py-2 bg-green-500 text-white rounded-full"
+              onClick={() => navigate(`/movie/update/${_id}`)}
             >
               Update Movie
             </button>
+
+
             <button
               className="btn btn-danger px-4 py-2 bg-[#ad1717] text-white rounded-full"
-              onClick={handleDelete} 
+              onClick={handleDelete}
             >
               Delete Movie
             </button>

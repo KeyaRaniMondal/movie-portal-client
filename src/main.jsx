@@ -16,6 +16,7 @@ import AllMovies from "./pages/allMovies";
 import PrivateRoute from "./privateRoute";
 import MovieDetails from "./components/movieDetail";
 import Error from "./pages/error";
+import UpdateMovie from "./components/updateMovie";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,17 @@ const router = createBrowserRouter([
         path: "/addMovie",
         element: <AddMovie></AddMovie>,
       },
+      {
+        path: "/movie/update/:id", 
+        element: (
+          <PrivateRoute>
+            <UpdateMovie />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/movies/${params.id}`),
+      },
+      
       {
         path: "/allMovies",
         element: <AllMovies></AllMovies>, 
