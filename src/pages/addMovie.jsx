@@ -51,9 +51,9 @@ const AddMovie = () => {
       summary, 
     };
 
-    console.log(newMovies);
+    //console.log(newMovies);
 
-    fetch("http://localhost:5000/movies", {
+    fetch("https://movie-portal-server-rouge.vercel.app/movies", {
       method: "POST",
       headers: {
         "content-type": "application/json",

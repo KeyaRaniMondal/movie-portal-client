@@ -65,7 +65,7 @@ const Register = () => {
         firebaseUID: firebaseUser.uid, 
       };
   
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("https://movie-portal-server-rouge.vercel.app/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const Register = () => {
   
       if (response.ok) {
         toast.success("User registered successfully!");
-        console.log("MongoDB User:", mongoResult);
+       // console.log("MongoDB User:", mongoResult);
         navigate("/");
       } else {
         toast.error("Failed to save user to database.");

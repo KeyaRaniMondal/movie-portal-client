@@ -12,7 +12,7 @@ import {createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,update
       setLoading(true);
       const result = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(result.user, { displayName: name, photoURL });
-      setUser(result.user); // Ensure updated profile data is set here.
+      setUser(result.user); 
       setLoading(false);
       return result;
     };

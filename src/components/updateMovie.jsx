@@ -26,7 +26,7 @@ const UpdateMovie = () => {
     const moviePoster = form.moviePoster.value;
     const movieTitle = form.movieTitle.value;
     const types = form.Types.value;
-    const summary = form.Bio.value; // Renamed for consistency with "Summary"
+    const summary = form.Bio.value; 
     
     // Validation
     if (!moviePoster.startsWith("http")) {

@@ -147,5 +147,3 @@ const Nav = () => {
 export default Nav;
 
 
-
-// http://localhost:5000/

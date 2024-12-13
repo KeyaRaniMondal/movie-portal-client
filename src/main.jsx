@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/movies"), 
+        loader: () => fetch("https://movie-portal-server-rouge.vercel.app/movies"), 
       },
       {
         path: "/addMovie",
@@ -40,13 +40,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/movies/${params.id}`),
+          fetch(`https://movie-portal-server-rouge.vercel.app/movies/${params.id}`),
       },
       
       {
         path: "/allMovies",
         element: <AllMovies></AllMovies>, 
-        loader: () => fetch("http://localhost:5000/movies"),
+        loader: () => fetch("https://movie-portal-server-rouge.vercel.app/movies"),
       },
       {
         path: "/movie/:id",
@@ -56,13 +56,15 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/movies/${params.id}`)
+          fetch(`https://movie-portal-server-rouge.vercel.app/movies/${params.id}`)
       },
 
       {
         path: "/favourite",
         element: <MyFavourite></MyFavourite>,
+        loader: () => fetch("https://movie-portal-server-rouge.vercel.app/favourites"), // Consistently use "favourites"
       },
+      
       {
         path: "/register",
         element: <Register></Register>,

@@ -26,7 +26,7 @@ const MovieDetails = () => {
     const confirmDelete = window.confirm('Are you sure you want to delete this movie?');
     if (!confirmDelete) return;
 
-    fetch(`http://localhost:5000/movies/${_id}`, {
+    fetch(`https://movie-portal-server-rouge.vercel.app/movies/${_id}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())
@@ -44,6 +44,36 @@ const MovieDetails = () => {
       });
   };
 
+  const handleAddToFavorites = async (movie) => {
+    try {
+
+      const response = await fetch("https://movie-portal-server-rouge.vercel.app/favourites", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movie),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to add to Favorites.");
+      }
+  
+      const data = await response.json();
+  
+      if (data.insertedId) {
+        alert("Movie added to Favorites!");
+      } else {
+        alert("An error occurred while adding to Favorites. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error adding to Favorites:", error);
+      alert(error.message);
+    }
+  };
+  
+
+  
   return (
     <div className="movie-details w-4/5 mx-auto my-10 ml-80">
       <div className="flex items-center justify-between">
@@ -62,10 +92,12 @@ const MovieDetails = () => {
             Description: <br /> {Bio}
           </p>
           <button
-            className="btn px-4 py-2 bg-[#cce94e] text-black rounded-full"
-          >
-            Add to Favorites
-          </button>
+  className="btn px-4 py-2 bg-[#cce94e] text-black rounded-full"
+  onClick={() => handleAddToFavorites(movie)} 
+>
+  Add to Favorites
+</button>
+
           <div className="flex gap-4">
             <button
               className="btn px-4 py-2 bg-green-500 text-white rounded-full"
