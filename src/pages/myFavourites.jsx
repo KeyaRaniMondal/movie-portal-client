@@ -1,8 +1,19 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../providers/authProviders";
 
 const MyFavourite = () => {
-  const favorites = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const [favorites, setFavorites] = useState([]); 
+
+  useEffect(() => {
+    if (user && user.email) {
+      fetch(`https://movie-portal-server-rouge.vercel.app/favourites?email=${user.email}`)
+        .then((res) => res.json())
+        .then((data) => setFavorites(data))
+        .catch((error) => console.error("Error fetching favorites:", error));
+    }
+  }, [user]);
+
 
   const handleRemoveFavorite = (id) => {
     if (window.confirm("Are you sure you want to remove this movie from favorites?")) {
@@ -11,9 +22,9 @@ const MyFavourite = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.deletedCount > 0) {
+          if (data.message || data.deletedCount > 0) {
             alert("Movie removed from favorites.");
-            window.location.reload(); 
+            setFavorites(favorites.filter((movie) => movie._id !== id)); 
           } else {
             alert("Failed to remove the movie from favorites.");
           }
@@ -30,7 +41,7 @@ const MyFavourite = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {favorites.map((movie) => (
-            <div key={movie._id} className="card bg-gray-200 p-4 rounded-lg shadow-md">
+            <div key={movie._id} className="card bg-[#9eacca] p-4 rounded-lg shadow-md">
               <img
                 src={movie.moviePoster}
                 alt={movie.movieTitle}
@@ -54,4 +65,5 @@ const MyFavourite = () => {
 };
 
 export default MyFavourite;
+
 

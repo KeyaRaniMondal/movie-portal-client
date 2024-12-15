@@ -39,7 +39,7 @@ const AllMovies = () => {
             <div>
               <h1 className="text-xl font-bold">{movie.movieTitle}</h1>
               <p className="text-sm">{movie.types}</p>
-              <p className="text-sm">Rating: {movie.rating}/10</p>
+              <p className="text-sm">Rating: {movie.rating}/5</p>
             </div>
             <Link to={`/movie/${movie._id}`}>
               <button className="btn btn1 mt-2">See Details</button>
