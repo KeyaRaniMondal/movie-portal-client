@@ -8,6 +8,8 @@
 - Add Movie : Movie can be added here
 - Update Movie
 - Delete Movie
+- search movies by title
 - All Movies : Can view all Movies
 - Details of Movies
 - Favourite movies collection
+- also delete favourite movie

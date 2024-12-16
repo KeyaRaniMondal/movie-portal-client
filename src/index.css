@@ -14,6 +14,20 @@
   }
 
 
+.btnu{
+    background: linear-gradient(to bottom, #59e409 0%, #ffff66 100%);
+  }
+
+
+.btnd{
+    background: linear-gradient(to bottom, #e00808 0%, #c27878 100%);
+  }
+
+.btnf{
+    background: linear-gradient(to bottom, #e40989 0%, #cf9fd1 100%);
+  }
+
+
 
 
 

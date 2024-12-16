@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/authProviders";
+import Swal from "sweetalert2";
 
 const MovieDetails = () => {
   const movie = useLoaderData();
@@ -24,35 +25,60 @@ const MovieDetails = () => {
   const { _id, moviePoster, movieTitle, types, rating, Bio } = movie;
 
   const handleDelete = () => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this movie?"
-    );
-    if (!confirmDelete) return;
-
-    fetch(`https://movie-portal-server-rouge.vercel.app/movies/${_id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          alert("Movie deleted successfully!");
-          navigate("/allMovies");
-        } else {
-          alert("Failed to delete the movie. Please try again.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error deleting movie:", error);
-        alert("An error occurred while deleting the movie.");
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://movie-portal-server-rouge.vercel.app/movies/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Movie deleted successfully!",
+                icon: "success",
+                timer: 2000,
+              });
+              navigate("/allMovies");
+            } else {
+              Swal.fire({
+                title: "Failed!",
+                text: "Failed to delete the movie. Please try again.",
+                icon: "error",
+              });
+            }
+          })
+          .catch((error) => {
+            console.error("Error deleting movie:", error);
+            Swal.fire({
+              title: "Error!",
+              text: "An error occurred while deleting the movie.",
+              icon: "error",
+            });
+          });
+      }
+    });
   };
 
   const handleAddToFavorites = async (movie) => {
     if (!user || !user.email) {
-      alert("You must be logged in to add to favorites.");
+      Swal.fire({
+        icon: "warning",
+        title: "Login Required",
+        text: "You must be logged in to add to favorites.",
+        timer: 3000,
+      });
       return;
     }
-
+  
     const favoriteMovie = {
       movieTitle: movie.movieTitle,
       moviePoster: movie.moviePoster,
@@ -60,7 +86,7 @@ const MovieDetails = () => {
       rating: movie.rating,
       user_email: user.email,
     };
-
+  
     try {
       const response = await fetch("https://movie-portal-server-rouge.vercel.app/favourites", {
         method: "POST",
@@ -69,15 +95,25 @@ const MovieDetails = () => {
         },
         body: JSON.stringify(favoriteMovie),
       });
-
+  
       if (response.ok) {
-        alert("Movie added to Favorites!");
+        Swal.fire({
+          icon: "success",
+          title: "Added to Favorites!",
+          text: `${movie.movieTitle} has been added to your favorites.`,
+          timer: 3000,
+        });
       } else {
         throw new Error("Failed to add movie to Favorites.");
       }
     } catch (error) {
       console.error("Error adding to Favorites:", error);
-      alert(error.message);
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: error.message,
+        timer: 3000,
+      });
     }
   };
 
@@ -102,7 +138,7 @@ const MovieDetails = () => {
             Description: <br /> {Bio}
           </p>
           <button
-            className="btn px-4 py-2 bg-[#cce94e] text-black rounded-full"
+            className="btn btnf px-4 py-2 bg-[#cce94e] text-black rounded-full"
             onClick={() => handleAddToFavorites(movie)}
           >
             Add to Favorites
@@ -110,7 +146,7 @@ const MovieDetails = () => {
 
           <div className="flex gap-4">
             <button
-              className="btn px-4 py-2 bg-green-500 text-white rounded-full"
+              className="btn btnu px-4 py-2 bg-green-500 rounded-full text-black"
               onClick={() => navigate(`/movie/update/${_id}`)}
             >
               Update Movie
@@ -118,7 +154,7 @@ const MovieDetails = () => {
 
 
             <button
-              className="btn btn-danger px-4 py-2 bg-[#ad1717] text-white rounded-full"
+              className="btn btnd px-4 py-2 bg-[#ad1717] text-white rounded-full"
               onClick={handleDelete}
             >
               Delete Movie

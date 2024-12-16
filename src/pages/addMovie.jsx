@@ -103,6 +103,7 @@ const AddMovie = () => {
             Genre: <br />
             <select name="Types" className="px-3 py-1 rounded-md">
               <option value="ai">AI</option>
+              <option value="adventure">Adventure</option>
               <option value="comedy">Comedy</option>
               <option value="thriller">Thriller</option>
               <option value="horror">Horror</option>

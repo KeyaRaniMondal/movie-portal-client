@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import addMovie from "../assets/addMv.jpg";
 import { Rating } from "react-simple-star-rating";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -136,6 +137,7 @@ const UpdateMovie = () => {
           <ToastContainer position="top-right" />
         </form>
       </div>
+            <img src={addMovie} alt="" className="w-1/2" />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const AllMovies = () => {
   );
 
   return (
-    <div className="w-max pb-4 mt-10 mx-32">
+    <div className="w-max pb-4 mt-10 mx-10">
       <h1 className="text-4xl font-bold text-center pb-14">All Featured Movies</h1>
 
       <div className="flex justify-center mb-8">

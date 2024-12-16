@@ -8,27 +8,27 @@ const Nav = () => {
 
   const links = (
     <>
-      <NavLink to="/" className="block lg:inline-block px-3 py-2 hover:text-gray-300">
+      <NavLink to="/" className="block lg:inline-block px-3 py-2 hover:text-[#d6564c] ">
         Home
       </NavLink>
-      <NavLink to="/allMovies" className="block lg:inline-block px-3 py-2 hover:text-gray-300">
+      <NavLink to="/allMovies" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
         All Movies
       </NavLink>
       {user ? (
         <>
-          <NavLink to="/addMovie" className="block lg:inline-block px-3 py-2 hover:text-gray-300">
+          <NavLink to="/addMovie" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
             Add Movies
           </NavLink>
-          <NavLink to="/favourite" className="block lg:inline-block px-3 py-2 hover:text-gray-300">
+          <NavLink to="/favourite" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
             My Favourites
           </NavLink>
         </>
       ) : (
         <>
-          <NavLink to="/login" className="block lg:inline-block px-3 py-2 hover:text-gray-300">
+          <NavLink to="/login" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
             Login
           </NavLink>
-          <NavLink to="/register" className="block lg:inline-block px-3 py-2 hover:text-gray-300">
+          <NavLink to="/register" className="block lg:inline-block px-3 py-2 hover:text-gray-300 ">
             Register
           </NavLink>
         </>
@@ -55,7 +55,7 @@ const Nav = () => {
   return (
     <nav className="navbar bg-gradient-to-r from-black via-[#795f5b] to-gray-500 px-5 lg:px-20 py-3">
       <div className="flex justify-between items-center w-full">
-        {/* Left Side: Logo and Animation */}
+
         <div className="flex items-center gap-3">
           {animationData ? (
             <Lottie animationData={animationData} loop={true} className="h-12 hidden md:block" />
@@ -65,7 +65,7 @@ const Nav = () => {
           <a className="text-xl text-[#b4acda] font-bold">Movie-Mania</a>
         </div>
 
-        {/* Right Side: Links and User Dropdown */}
+
         <div className="hidden lg:flex items-center gap-10">
           <div className="space-x-5 text-white font-bold">{links}</div>
           {user ? (
@@ -107,7 +107,6 @@ const Nav = () => {
           )}
         </div>
 
-        {/* Hamburger Menu for Mobile */}
         <div className="lg:hidden flex items-center">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
