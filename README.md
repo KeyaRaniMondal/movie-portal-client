@@ -38,7 +38,6 @@ Movie-Menia is built using modern web technologies:
 
 The following dependencies are used in this project:
 
-```json
 "dependencies": {
   "dotenv": "^16.4.7",
   "firebase": "^11.0.2",
